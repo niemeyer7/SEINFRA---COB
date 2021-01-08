@@ -1,0 +1,5 @@
+Ter uma forma de colocar os elementos. Talvez seja melhor colocar como sendo uma outra tabela fora da tabela catalogo. Assim a tabela empresa estaria ligada ao catalago de itens e ao catalogo de elementos
+quando estiver rodando algo, trabalhar melhor na visualização da tabela. Ela tem que separar os itens por categoria. por exemplo:
+Item	Codigo  	Descrição
+  A	   		serviços de escritorio 	
+ 1	01.001.0001-0
