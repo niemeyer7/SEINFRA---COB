@@ -1,0 +1,88 @@
+def gerarOrcamento(idContrato):
+
+    for queryContrato in geCDP.queryTabelaComWhere(tabela="CONTRATO",coluna="ID",dado=idContrato):
+        Contrato = modelContrato.contrato(queryContrato)
+            
+        html1 ="""<!DOCTYPE html>
+            <html>
+            <head>
+            <style>
+            table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+            h4{
+                font-family: arial,sans-serif;
+            }
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+            h1,h2{
+                font-family: arial, sans-serif;
+                text-align: center;
+                
+            }
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+            </style>
+            </head>
+            <body>
+            <h1><img src="icon.png" alt="Brasão" width="15%" height="15%"></h1>
+            <h2>Tabela orçamentaria</h2>"""
+
+        html2 = """
+        <h4>
+            <tr>
+                <td>Projeto:  {projeto}<br></td>
+                <td>Local: {Local}<br></td>
+            </tr>
+        </h4>
+        <h4>
+            <td>Itens de serviço</td>
+        </h4>
+        <table>
+        <tr>
+            <th>Item</th>
+            <th>Codigo</th>
+            <th>Empresa</th>
+	    <th>Descricao</th>
+            <th>Unidade</th>
+            <th>Preço</th>
+            <th>total</th>
+	<tfoot>
+	<tr>
+            <td>Sub Total</td>
+            <td></td>
+           </tr>
+           <tr>
+            <td>BDI</td>
+            <td></td>
+           </tr>
+            <tr>
+              <td>Total</td>
+		<td></td>
+	</tr>
+          </tfoot>  
+            </tr>""".format(ItemID=Contrato.contrato,Codigo=Contrato.numeroDeProcesso,Empresa=Contrato.empresa)
+        
+        with open('{contrato}.html'.format(contrato=Contrato.empresa), 'a+') as arqRelat:
+            arqRelat.write(html1)
+            arqRelat.write(html2)
+            
+            arqRelat.write('<tr>')
+            arqRelat.write("<td>{Item}</td>".format(contrato=Contrato.contrato))
+            arqRelat.write("<td>{Codigo}</td>".format(numeroDeProcesso=Contrato.numeroDeProcesso))
+	    arqRelat.write("<td>{Empresa}</td>".format(numeroDeProcesso=Contrato.numeroDeProcesso))	   
+            arqRelat.write("<td>{Descricao}</td>".format(objeto=Contrato.objeto))   
+            arqRelat.write("<td>{Unidade}</td>".format(dataAssinatura=Contrato.dataAssinatura))     
+            arqRelat.write("<td>{Preco}</td>".format(dataTermino= Contrato.dataTermino))    
+            arqRelat.write("<td>{total}</td>".format(vencimento= Contrato.vencimento))  
+            arqRelat.write('</tr>')
+
+            </h4>
+
+      

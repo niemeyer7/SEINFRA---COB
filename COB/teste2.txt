@@ -1,0 +1,76 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+</head>
+<body>
+<img src="C:/Users/oscar.ribeiro/Downloads/SUBURB TEMP.png" alt="Texto alternativo" title="Avatar">
+     <div class="container">
+    <table class="bordered striped centered">
+            <thead>
+    <tr>
+              <th>Local</th>
+              <th>Obra</th>
+            </tr>
+            <tbody>
+              <tr>
+                <td>Mangarativa</td>
+                <td>Ciclovia</td>
+              </tr>
+            </tbody>
+           </thead>
+
+    <div class="container">
+    <table class="bordered striped centered">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Codigo</th>
+                    <th>Descricao</th>
+                    <th>Unidade</th>
+                    <th>Preco</th>
+                    <th>Quantidade</th>
+                    <th>Preco total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01.01</td>
+                    <td>01.001.0001</td>
+                    <td>limite de plasticidade</td>
+                    <td>UN</td>
+                    <td>1000</td>
+                    <td>1</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                  <td>Categoria 1</td>
+                </tr>
+                <tr>
+                    <td>02.01</td>
+                    <td>02.001.0001</td>
+                    <td>Papelaria</td>
+                    <td>UN</td>
+                    <td>1000</td>
+                    <td>1</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                  <td>Categoria 2</td>
+                </tr>
+            </tbody>
+           <tfoot>
+           <tr>
+            <td>BDI</td>
+            <td></td>
+           </tr>
+            <tr>
+              <td>Total</td>
+              <td>2000</td>
+            </tr>
+          </tfoot>           
+        </table>
+    </div>
+</body></html>
