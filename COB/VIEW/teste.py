@@ -4,6 +4,7 @@ import wx
 def main():
     teste()
 
+
 class teste(object):
     """docstring for teste"""
     def __init__(self):
@@ -12,7 +13,7 @@ class teste(object):
         self.frame = wx.Frame(None, -1, 'Gerador Orçamento Basico', style=wx.MINIMIZE_BOX | wx.SYSTEM_MENU | wx.CAPTION | wx.CLOSE_BOX | wx.CLIP_CHILDREN)
         self.frame.SetDimensions(0,0,1500,800)
         self.panel = wx.Panel(self.frame)
-
+       
         self.statusbar =  self.frame.CreateStatusBar(1)
 
         self.menu_arquivo = wx.Menu()
@@ -47,9 +48,7 @@ class teste(object):
 
         #wx.StaticText(self.panel, wx.ID_ANY, "Filtra", (25, 25))
         #self.txtFiltro = wx.TextCtrl(self.panel, wx.ID_ANY,"", (60, 25),size=(500, -1),style=wx.TE_PROCESS_ENTER)
-        
-        self.frame.Show()
-        self.frame.Centre()
+
 
 
 if __name__ == '__main__':
