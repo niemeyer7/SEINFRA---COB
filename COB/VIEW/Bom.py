@@ -1,6 +1,6 @@
 import wx
 import wx.adv
-
+import telapesquisa
 
 class windowClass (wx.Frame):
     def __init__ (self,parent,title):
@@ -54,6 +54,8 @@ class windowClass (wx.Frame):
         self.buttonresetar = wx.Button(panel, wx.ID_ANY, 'Resetar', (600, 620),size=(100,-1))
 
 
+        self.button_pesquisar.Bind(wx.EVT_BUTTON,self.janelapesquisa)
+
         self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(980,220), pos=(200,10))      
         self.orcamentopesquisa.InsertColumn(0,"Item",width=50)
         self.orcamentopesquisa.InsertColumn(1,"Empresa",width=100)
@@ -81,9 +83,11 @@ class windowClass (wx.Frame):
         self.SetTitle('eep')
         self.Show(True)
 
+    def janelapesquisa(self,event):
+        pesquisadescr = telapesquisa.telapesquisa()
 
 
-        
+
     def Quit(self, e):
         self.Close()
     
