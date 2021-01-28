@@ -54,7 +54,7 @@ class windowClass (wx.Frame):
         self.buttonresetar = wx.Button(panel, wx.ID_ANY, 'Resetar', (600, 620),size=(100,-1))
 
 
-        self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(1000,220), pos=(200,10))      
+        self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(980,220), pos=(200,10))      
         self.orcamentopesquisa.InsertColumn(0,"Item",width=50)
         self.orcamentopesquisa.InsertColumn(1,"Empresa",width=100)
         self.orcamentopesquisa.InsertColumn(2,"Codigo",width=200)
@@ -69,15 +69,15 @@ class windowClass (wx.Frame):
 
         self.dateBegin = wx.adv.DatePickerCtrl(panel, wx.ID_ANY,wx.DefaultDateTime, pos=(450, 360),size=(100,-1))
 
-        self.orcamentotabela = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(1000,220), pos=(25,400))      
+        self.orcamentotabela = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(1150,220), pos=(25,400))      
         self.orcamentotabela.InsertColumn(0,"Item",width=50)
         self.orcamentotabela.InsertColumn(1,"Empresa",width=100)
-        self.orcamentotabela.InsertColumn(2,"Codigo",width=100)
-        self.orcamentotabela.InsertColumn(3,"Descrição",width=200)
+        self.orcamentotabela.InsertColumn(2,"Codigo",width=150)
+        self.orcamentotabela.InsertColumn(3,"Descrição",width=420)
         self.orcamentotabela.InsertColumn(4,"Unidade",width=100)
         self.orcamentotabela.InsertColumn(5,"Preço",width=100)
         self.orcamentotabela.InsertColumn(6,"Quantidade",width=100)
-        self.orcamentotabela.InsertColumn(7,"Total",width=100)
+        self.orcamentotabela.InsertColumn(7,"Total",width=120)
         self.SetTitle('eep')
         self.Show(True)
 
