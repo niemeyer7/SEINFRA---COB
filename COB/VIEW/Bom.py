@@ -5,7 +5,7 @@ import telapesquisa
 
 
 def main():
-    windowClass(parent=None,title="Orcar")
+    windowClass(parent=None,title="Orcamento basico")
 
 class windowClass (wx.Frame):
     def __init__ (self,parent,title):
@@ -112,7 +112,7 @@ class windowClass (wx.Frame):
         self.Show(True)
 
     def janelapesquisa(self, event):
-        pesquisadescr = telapesquisa.telapesquisa(None, "Orcar Avô")
+        pesquisadescr = telapesquisa.telapesquisa(None, "")
 
 
 

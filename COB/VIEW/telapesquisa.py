@@ -1,5 +1,9 @@
 import wx
 
+
+def main():
+    telapesquisa(parent=None,title="")
+
 class telapesquisa (wx.Frame):
     def __init__ (self,parent,title):
         super(telapesquisa, self).__init__(parent, title=title, size= (1200,700))
@@ -27,11 +31,10 @@ class telapesquisa (wx.Frame):
         self.Show(True)
 
     
-def main():
+if __name__ == '__main__':
 
     app = wx.App()
-    telapesquisa(None, "teste")
-
+    main()  
     app.MainLoop()
 
 
