@@ -1,6 +1,6 @@
 import wx
 import wx.adv
-import telapesquisa
+# import telapesquisa
 
 class windowClass (wx.Frame):
     def __init__ (self,parent,title):
@@ -58,11 +58,12 @@ class windowClass (wx.Frame):
         self.lblCla = wx.StaticText(panel,wx.ID_ANY,'Cla',(25,130), size=(100,-1))
         self.lblFamilia = wx.StaticText(panel,wx.ID_ANY,'Familia',(25,170), size=(100,-1))
         self.lblitem = wx.StaticText(panel,wx.ID_ANY,'item',(25,210), size=(100,-1))
-        self.lblCodigo = wx.StaticText(panel,wx.ID_ANY,'Codigo',(200,250), size=(100,-1))
-        self.lblprojeto = wx.StaticText(panel,wx.ID_ANY,'Projeto',(20,330), size=(100,-1))
-        self.lbllocal = wx.StaticText(panel,wx.ID_ANY,'Local',(20,360), size=(100,-1))
-        self.lblbdi = wx.StaticText(panel, wx.ID_ANY,"BDI", (750,360), size=(150,-1))
+        self.lblCodigo = wx.StaticText(panel,wx.ID_ANY,'Codigo',(200,250), size=(50,-1))
+        self.lblprojeto = wx.StaticText(panel,wx.ID_ANY,'Projeto',(20,330), size=(50,-1))
+        self.lbllocal = wx.StaticText(panel,wx.ID_ANY,'Local',(20,360), size=(50,-1))
+        self.lblbdi = wx.StaticText(panel, wx.ID_ANY,"BDI", (750,360), size=(50,-1))
 
+        
 
         #Caixa txt
 
@@ -73,7 +74,7 @@ class windowClass (wx.Frame):
 
 
         #bind pesquisa
-        self.button_pesquisar.Bind(wx.EVT_BUTTON, self.janelapesquisa)
+        # self.button_pesquisar.Bind(wx.EVT_BUTTON, self.janelapesquisa)
 
         #tabela filtro
         self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(980,220), pos=(200,10))      
@@ -105,8 +106,8 @@ class windowClass (wx.Frame):
         self.SetTitle('eep')
         self.Show(True)
 
-    def janelapesquisa(self,parent, event):
-        pesquisadescr = telapesquisa.telapesquisa()
+    # def janelapesquisa(self,parent, event):
+    #     pesquisadescr = telapesquisa.telapesquisa()
 
 
 
