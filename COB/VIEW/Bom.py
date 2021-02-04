@@ -1,6 +1,11 @@
 import wx
 import wx.adv
-# import telapesquisa
+import telapesquisa
+
+
+
+def main():
+    windowClass(parent=None,title="Orcar")
 
 class windowClass (wx.Frame):
     def __init__ (self,parent,title):
@@ -74,7 +79,7 @@ class windowClass (wx.Frame):
 
 
         #bind pesquisa
-        # self.button_pesquisar.Bind(wx.EVT_BUTTON, self.janelapesquisa)
+        self.button_pesquisar.Bind(wx.EVT_BUTTON, self.janelapesquisa)
 
         #tabela filtro
         self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(980,220), pos=(200,10))      
@@ -103,23 +108,22 @@ class windowClass (wx.Frame):
         self.orcamentotabela.InsertColumn(5,"Preço",width=100)
         self.orcamentotabela.InsertColumn(6,"Quantidade",width=100)
         self.orcamentotabela.InsertColumn(7,"Total",width=120)
-        self.SetTitle('eep')
+        
         self.Show(True)
 
-    # def janelapesquisa(self,parent, event):
-    #     pesquisadescr = telapesquisa.telapesquisa()
+    def janelapesquisa(self, event):
+        pesquisadescr = telapesquisa.telapesquisa(None, "Orcar Avô")
 
 
 
     def Quit(self, e):
         self.Close()
     
-def main():
+
+
+
+if __name__ == '__main__':
 
     app = wx.App()
-    windowClass(None, "teste")
-
+    main()  
     app.MainLoop()
-
-main()
-

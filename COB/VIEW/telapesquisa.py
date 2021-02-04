@@ -23,7 +23,7 @@ class telapesquisa (wx.Frame):
         self.orcamentopesquisa.InsertColumn(3,"Unidade",width=100)
         self.orcamentopesquisa.InsertColumn(4,"Preço",width=100)
        
-        self.SetTitle('eep')
+        
         self.Show(True)
 
     
@@ -34,7 +34,6 @@ def main():
 
     app.MainLoop()
 
-main()
 
 
 
