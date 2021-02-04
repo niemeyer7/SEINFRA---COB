@@ -38,6 +38,7 @@ class telapesquisa (wx.Frame):
         self.botaoInserir = wx.Button(panel,wx.ID_ANY,'Inserir',(440,530), size=(100,-1))
         self.botaoFechar = wx.Button(panel,wx.ID_ANY,'Fechar',(25,530), size=(100,-1))
 
+        self.botaoFechar.Bind(wx.EVT_BUTTON, self.fechar)
 
 
         # self.buttonpesquisar = wx.Button(panel, wx.ID_ANY, 'Pesquisar', (25, 300),size=(100,-1))
@@ -46,7 +47,14 @@ class telapesquisa (wx.Frame):
         
         self.Show(True)
 
-    
+
+    def fechar(self, event):
+        
+        self.Close()
+
+        self.Destroy()
+
+
 if __name__ == '__main__':
 
     app = wx.App()
