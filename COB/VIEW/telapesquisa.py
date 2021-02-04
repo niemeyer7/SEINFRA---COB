@@ -27,10 +27,20 @@ class telapesquisa (wx.Frame):
         self.orcamentopesquisa.InsertColumn(3,"Unidade",width=100)
         self.orcamentopesquisa.InsertColumn(4,"Preço",width=100)
        
-        
+        self.botaoFechar = wx.Button(panel,wx.ID_ANY,'Fechar',(25,530), size=(100,-1))
+
+        self.botaoFechar.Bind(wx.EVT_BUTTON, self.fechar)
+
+
         self.Show(True)
 
-    
+    def fechar(self, event):
+        
+        self.Close()
+
+        self.Destroy()
+
+
 if __name__ == '__main__':
 
     app = wx.App()
