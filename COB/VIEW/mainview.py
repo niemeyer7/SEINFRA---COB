@@ -1,6 +1,7 @@
 import wx
 import wx.adv
 import telapesquisa
+import os
 
 
 
@@ -112,6 +113,9 @@ class windowClass (wx.Frame):
 
         # self.frame.Bind(wx.EVT_MENU, self.ViewInserirdados, self.inseriritem)
 
+        #BIND SALVAR
+
+        self.button_salvar.Bind(wx.EVT_BUTTON, self.onSave)
 
 
         #tabela orcamento
@@ -137,6 +141,37 @@ class windowClass (wx.Frame):
     
 
 
+
+    def onSave(self, event):
+        try:
+            f = open(os.path.join(self.dirname, self.filename), 'w')
+            f.write(self.control.GetValue())
+            f.close()
+        except:
+            try:
+                dlg = wx.FileDialog(self, "Save to file:", ".", "", "Text (*.txt)|*.txt", wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
+                if (dlg.ShowModal() == wx.ID_OK):
+                    self.filename = dlg.GetFilename()
+                    self.dirname = dlg.GetDirectory()
+                    f = open(os.path.join(self.dirname, self.filename), 'w')
+                    f.write(self.control.GetValue())
+                    f.close()
+                dlg.Destroy()
+            except:
+                pass
+
+    def onSaveAs(self, event):
+        try:
+            dlg = wx.FileDialog(self, "Save to file:", ".", "", "Text (*.txt)|*.txt", wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
+            if (dlg.ShowModal() == wx.ID_OK):
+                    self.filename = dlg.GetFilename()
+                    self.dirname = dlg.GetDirectory()
+                    f = open(os.path.join(self.dirname, self.filename), 'w')
+                    f.write(self.control.GetValue())
+                    f.close()
+            dlg.Destroy()
+        except:
+            pass
 
 if __name__ == '__main__':
 
