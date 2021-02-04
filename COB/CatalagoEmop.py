@@ -6,5 +6,3 @@ records = banco.to_records(index=False)
 result = tuple(records)
 
 
-CatalagaEmop = modelcatalagos.catalagos(listaDeitensCatalago=result[0])
-print(CatalagaEmop)

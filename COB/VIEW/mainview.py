@@ -23,12 +23,25 @@ class windowClass (wx.Frame):
         
         filebutton = wx.Menu()
 
+
+        
+
+
+
+
         abaNovoOrcamento = filebutton.Append(wx.ID_ANY, "Novo Orcamento", "Novo Orcamento")
         abaCarregarOrcamento = filebutton.Append(wx.ID_ANY, "Carregar Orcamento", "Carregar Orcamento")
         exitItem = filebutton.Append(wx.ID_EXIT, "Sair")
 
         sizer = wx.GridBagSizer(5,5)
         menubar.Append(filebutton,"Arquivo")
+
+
+
+        menuinserir= wx.Menu()
+
+        menubar.Append(menuinserir,"Especial")
+        inseriritem = menuinserir.Append(wx.ID_ANY, "Inserir Item", "Inserir Item")
 
         self.SetMenuBar(menubar)
         self.Bind(wx.EVT_MENU, self.Quit,exitItem)
@@ -96,6 +109,9 @@ class windowClass (wx.Frame):
 
         #bind para pegar os dados do banco de dados  (maior parte dos botoes precisam estar vinculados com o banco)
         #bind para inserir os dados 
+
+        # self.frame.Bind(wx.EVT_MENU, self.ViewInserirdados, self.inseriritem)
+
 
 
         #tabela orcamento

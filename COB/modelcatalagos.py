@@ -1,9 +1,29 @@
 class catalagos:
-    def __init__(self, listaDeitensCatalago):
+    def __init__(self, listaDeitensCatalago, tipo=1):
         self.listaDeitensCatalago = listaDeitensCatalago
         
+        if tipo == 1:
+            self.ajustarCatalago()
+        
+        if tipo == 2:
+            self.ajustarCatalagoNovo()
 
-    def ajustarDados(self):
+    def ajustarCatalago(self):
+        self.id = self.listaDeitensCatalago[0]
+        self.idFonte = self.listaDeitensCatalago[1]
+        self.categoria = self.listaDeitensCatalago[2]
+        self.cla = self.listaDeitensCatalago[3]
+        self.familia = self.listaDeitensCatalago[4]
+        self.item = self.listaDeitensCatalago[5]
+        self.desonerado = self.listaDeitensCatalago[6]
+        self.codigo = self.listaDeitensCatalago[7]
+        self.descricao = self.listaDeitensCatalago[8]
+        self.unidade = self.listaDeitensCatalago[9]
+        self.preco = self.listaDeitensCatalago[10]
+
+
+    
+    def ajustarCatalagoNovo(self):
         self.idFonte = self.listaDeitensCatalago[0]
         self.categoria = self.listaDeitensCatalago[1]
         self.cla = self.listaDeitensCatalago[2]
