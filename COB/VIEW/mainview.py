@@ -111,6 +111,46 @@ class windowClass (wx.Frame):
         #bind para pegar os dados do banco de dados  (maior parte dos botoes precisam estar vinculados com o banco)
         #bind para inserir os dados 
 
+        # def carregaDadosCatalagosFiltrados(self,event):
+
+        # coluna = self.comboFiltro.GetValue()
+        # texto = self.txtFiltro.GetValue()
+        
+        # if coluna == "":
+        #     coluna = ""
+
+        # self.listaDeitensCatalago.DeleteAllItems()
+        # self.index = 0
+        # dados = geCDP.queryTabelaComWhereLike(tabela="",coluna=coluna,dado=texto)
+        
+        # for dado in dados:
+        #     CatalagoQuery = modelcatalagos.catalagos(listaDeitensCatalago=dado)
+        #     id = str(contratoQuery.id)
+        #     Fonte = contratoQuery.idFonte
+        #     Categoria = contratoQuery.categoria
+        #     Cla = contratoQuery.cla
+        #     Familia = contratoQuery.familia
+        #     Item = contratoQuery.item 
+        #     Desonerado = contratoQuery.desonerado
+        #     Codigo = contratoQuery.codigo
+        #     Descricao = contratoQuery.descricao
+        #     Unidade = contratoQuery.unidade
+        #     Preco = contratoQuery.preco
+            
+
+        #     self.listaDeitensCatalago.InsertStringItem(self.index, id)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 1, Fonte)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 2, Categoria)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 3, Cla)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 4, Familia)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 5, Item)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 6, Desonerado)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 7, Codigo)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 8, Descricao)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 9, Unidade)
+        #     self.listaDeitensCatalago.SetStringItem(self.index, 9, Preco)
+        #     self.index += 1
+
         # self.frame.Bind(wx.EVT_MENU, self.ViewInserirdados, self.inseriritem)
 
         #BIND SALVAR
