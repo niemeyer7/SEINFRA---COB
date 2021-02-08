@@ -85,7 +85,7 @@ def query_inclusao(idFonte,categoria,cla,familia,item,desonerado,codigo,descrica
         {unidade},
         {preco})
     """.format(
-        fk_empresa_id=fk_empresa_id,
+        idFonte=idFonte,
         categoria=categoria,
         cla=cla,
         familia=familia,
