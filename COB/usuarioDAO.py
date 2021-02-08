@@ -5,7 +5,7 @@ def conectar():
     cursor = connect.cursor()
     return connect,cursor
 
-def comandos_sql(sql,fetchall=False):
+def comandosSql(sql,fetchall=False):
     connect,cursor = conectar()
     cursor.execute(sql)    
     if fetchall == True:
@@ -16,7 +16,7 @@ def comandos_sql(sql,fetchall=False):
     if fetchall == True:
         return dados
 
-def query_tabela(tabela):
+def queryTabela(tabela):
     connect,cursor = conectar()
     cursor.execute("""SELECT * FROM {tabela}""".format(tabela=tabela))
     dados = cursor.fetchall()
@@ -25,34 +25,32 @@ def query_tabela(tabela):
     connect.close()
     return dados
 
-def criartabelaempresa():
+def criarTabelaEmpresa():
     connect,cursor = conectar()
     cursor.execute("""
-    CREATE TABLE empresa(
+    CREATE TABLE IF NOT EXISTS empresa(
         idFonte SERIAL PRIMARY KEY,
         Fonte VARCHAR(255) NOT NULL 
-        )
-    
-    """ 
+        )""") 
     connect.commit()
     cursor.close()
     connect.close()
 
 
 
-def criartabela():
+def criarTabela():
     connect,cursor = conectar()
     cursor.execute("""
-    CREATE TABLE catalogo(
+    CREATE TABLE IF NOT EXISTS catalogo(
         IDitem SERIAL PRIMARY KEY,
-        idFonte INTEGRAL, 
+        idFonte INT, 
         categoria VARCHAR(255) NOT NULL, 
         cla VARCHAR(255) ,
-        familia LONGTEXT NOT NULL, 
-        item LONGTEXT, 
-        desonerado TINYBLOB, 
+        familia TEXT NOT NULL, 
+        item TEXT, 
+        desonerado BLOB, 
         codigo VARCHAR(255) NOT NULL, 
-        descricao LONGTEXT, 
+        descricao TEXT, 
         unidade VARCHAR(255) NOT NULL , 
         preco decimal(12,2) NOT NULL,
         PRIMARY KEY (idFonte, IDitem),
@@ -61,7 +59,7 @@ def criartabela():
         FOREIGN KEY (idFonte)
             REFERENCES empresa (idFonte))
     
-    """ 
+    """) 
     connect.commit()
     cursor.close()
     connect.close()
@@ -102,8 +100,7 @@ def query_inclusao(idFonte,categoria,cla,familia,item,desonerado,codigo,descrica
     
 
 if __name__ == "__main__":
-    dado = query_tabela(tabela='catalogo')
-    for i in dado:
-        print(i)
+    criarTabela()
+    criarTabelaEmpresa()
     
     # query_inclusao()
