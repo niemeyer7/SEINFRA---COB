@@ -42,8 +42,8 @@ def criarTabela():
     connect,cursor = conectar()
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS catalogo(
-        IDitem SERIAL PRIMARY KEY,
-        idFonte INT, 
+        IDitem SERIAL,
+        idFonteEmpresa INT, 
         categoria VARCHAR(255) NOT NULL, 
         cla VARCHAR(255) ,
         familia TEXT NOT NULL, 
@@ -53,11 +53,9 @@ def criarTabela():
         descricao TEXT NOT NULL, 
         unidade VARCHAR(255) NOT NULL , 
         preco decimal(12,2) NOT NULL,
-        PRIMARY KEY (idFonte, IDitem),
-        FOREIGN KEY (IDitem)
-            REFERENCES catalogo (IDitem),
+        PRIMARY KEY (IDitem),
         FOREIGN KEY (idFonte)
-            REFERENCES empresa (idFonte))
+        REFERENCES empresa (idFonteEmpresa))
     
     """) 
     connect.commit()
@@ -67,12 +65,12 @@ def criarTabela():
 
 
 
-def query_inclusao(idFonte,categoria,cla,familia,item,desonerado,codigo,descricao,unidade,preco):
+def query_inclusao(idFonteEmpresa,categoria,cla,familia,item,desonerado,codigo,descricao,unidade,preco):
     connect,cursor = conectar()
     cursor.execute("""
-    INSERT INTO catalogo(idFonte, categoria, cla,familia, item, desonerado, codigo, descricao, unidade, preco)
+    INSERT INTO catalogo(idFonteEmpresa, categoria, cla,familia, item, desonerado, codigo, descricao, unidade, preco)
     VALUES(   
-        {idFonte}, 
+        {idFonteEmpresa}, 
         {categoria},
         {cla},
         {familia},
@@ -83,7 +81,7 @@ def query_inclusao(idFonte,categoria,cla,familia,item,desonerado,codigo,descrica
         {unidade},
         {preco})
     """.format(
-        idFonte=idFonte,
+        idFonteEmpresa=idFonteEmpresa,
         categoria=categoria,
         cla=cla,
         familia=familia,
@@ -100,7 +98,8 @@ def query_inclusao(idFonte,categoria,cla,familia,item,desonerado,codigo,descrica
     
 
 if __name__ == "__main__":
-    criarTabela()
     criarTabelaEmpresa()
+    criarTabela()
+    
     
     # query_inclusao()

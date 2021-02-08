@@ -1,6 +1,7 @@
 import pandas as pd 
 import modelcatalagos
 
+
 emop =pd.read_csv("dadosgerais.csv", sep=';', error_bad_lines=False)
 emop = emop.to_records(index=False)
 emop = tuple(emop)
