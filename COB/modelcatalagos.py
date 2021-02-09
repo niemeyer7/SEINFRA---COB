@@ -39,4 +39,12 @@ class catalagos:
         
 
     def gravarNoBanco(self):
-        usuarioDAO.query_inclusao(idFonteEmpresa=self.idFonte)
+        usuarioDAO.query_inclusao(idFonteEmpresa=self.idFonte,
+        categoria=self.categoria,
+        cla=self.cla,
+        familia=self.familia,
+        item=self.item,
+        desonerado=self.desonerado,
+        codigo=self.codigo,
+        descricao=self.descricao,
+        unidade=self.unidade,preco=self.preco)
