@@ -1,8 +1,8 @@
 import wx
 import wx.adv
-import telapesquisa
+import ViewTelaPesquisa
 import os
-
+import ViewInserirdados
 
 
 def main():
@@ -93,7 +93,7 @@ class windowClass (wx.Frame):
 
 
         #bind pesquisa
-        self.button_pesquisar.Bind(wx.EVT_BUTTON, self.janelapesquisa)
+        self.button_pesquisar.Bind(wx.EVT_BUTTON, self.JanelaPesquisa)
 
         #tabela filtro
         self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(980,220), pos=(200,10))      
@@ -171,8 +171,8 @@ class windowClass (wx.Frame):
         
         self.Show(True)
 
-    def janelapesquisa(self, event):
-        pesquisadescr = telapesquisa.telapesquisa(None, "")
+    def JanelaPesquisa(self, event):
+        pesquisadescr = ViewTelaPesquisa.telapesquisa(None, "")
 
 
 

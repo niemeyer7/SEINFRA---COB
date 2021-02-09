@@ -2,11 +2,11 @@ import wx
 
 
 def main():
-    telapesquisa(parent=None,title="")
+    TelaInserirDados(parent=None,title="")
 
-class telapesquisa (wx.Frame):
+class TelaInserirDados (wx.Frame):
     def __init__ (self,parent,title):
-        super(telapesquisa, self).__init__(parent, title=title, size= (600,600))
+        super(TelaInserirDados, self).__init__(parent, title=title, size= (600,600))
 
         self.basicGUI()
 
