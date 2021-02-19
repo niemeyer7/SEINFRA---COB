@@ -1,4 +1,4 @@
-import usuarioDAO
+# import usuarioDAO
 
 class catalagos:
     def __init__(self, listaDeitensCatalago, tipo=1):
@@ -38,13 +38,13 @@ class catalagos:
         self.preco = self.listaDeitensCatalago[9]
         
 
-    def gravarNoBanco(self):
-        usuarioDAO.query_inclusao(idFonteEmpresa=self.idFonte,
-        categoria=self.categoria,
-        cla=self.cla,
-        familia=self.familia,
-        item=self.item,
-        desonerado=self.desonerado,
-        codigo=self.codigo,
-        descricao=self.descricao,
-        unidade=self.unidade,preco=self.preco)
+    # def gravarNoBanco(self):
+    #     usuarioDAO.query_inclusao(idFonteEmpresa=self.idFonte,
+    #     categoria=self.categoria,
+    #     cla=self.cla,
+    #     familia=self.familia,
+    #     item=self.item,
+    #     desonerado=self.desonerado,
+    #     codigo=self.codigo,
+    #     descricao=self.descricao,
+    #     unidade=self.unidade,preco=self.preco)
