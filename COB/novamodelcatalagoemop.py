@@ -1,4 +1,4 @@
-categoriaEmop = {
+categoriaEmopDic = {
     "01 - SERVIÇOS DE ESCRITÓRIO, LABORATÓRIO E CAMPO":"01",
     "02 - CANTEIRO DE OBRA": "02",
     "03 - MOVIMENTO DE TERRA": "03",
@@ -22,7 +22,7 @@ categoriaEmop = {
     "21 - ILUMINAÇÃO PÚBLICA": "21",
     "22 - REFLORESTAMENTO E EXPLORAÇÃO FLORESTAL": "22"
 }
-familiaEmop = {
+familiaEmopDic = {
      "001 - Ensaios e Pesquisas em Solo":"001",
     "002 - Sondagem e Perfuração Rotativas com Coroa de Widia":"002",
     "003 - Sondagem e Perfuração em Terreno Comum e em Rocha":"003",
@@ -88,8 +88,6 @@ familiaEmop = {
     "025 - Transporte de Bate-Estacas":"025",
     "001 - Demolição manual (e remoção, arrancamento, Recolocação, Transporte Horizontal, Percussão) ,Desmontagem e Remoção Manuais de Tubos(e Conexões,Registros, Válvulas e Similares), Retirada de Transformador(e Gerador, Impermeabilização, Azulejos, Ladrilhos, Argamassas, Lama e Detritos de Reservatórios ou Caixas Enterradas, Escombros dentro do Canteiro de Obras),Corte de Aço (e Alvenaria, Gesso, Mármore, Marmorite e Cerâmica),Raspagem de Craquele de Pintura (e Raspagem de Craquele de Pintura),Arrumação de Blocos até 15kg, Limpeza e Lixamento Manual de Superfícies em Concreto,Desobstrução de Drenos, Limpeza de Vidros(e Aparelhos, Pisos, Paredes, Telhas, Caixas d’Água e Cisternas),Apicoamento e Furação de Concreto, Polimentos e Repolimentos de Pisos":"001",
     "002 - Demolição e Arrancamento - Serviços com Equipamentos, Demolição de Laje Pré-Fabricada com Equipamento( e Rompedor Hidráulico), Demolição e Remoção de Estruturas Metálicas(e Tubos, Conexões, Registros, Válvulas e Similares), Nivelamento de Tampões de Ferro Fundido":"002",
-    "CATEGORIA 19":"CAT",
-    "CATEGORIA 20":"CAT",
     "004 - CUSTOS RODOVIÁRIOS, Itens de Conservação de Rodovias Recomposição de Aterros e Pavimentos, Limpeza e Roçada Mecanizada":"004",
     "005 - CUSTOS RODOVIÁRIOS":"005",
     "006 - CUSTOS RODOVIÁRIOS":"006",
@@ -131,7 +129,6 @@ familiaEmop = {
     "055 - Letras Metálicas":"055",
     "057 - Sinalização e Placa de Identificação – Escrita em Braille":"057",
     "058 - Plásticos e Lonas para Proteções Diversas":"058",
-    "0":"0",
     "080 - Ensecadeiras de Estacas-Pranchas de Aço":"080",
     "081 - Ensecadeiras de Estacas-Pranchas de Aço e Escoramento de Valas “Tipo Blindagem”":"081",
     "082 - Retirada e Recolocação de Estaca Prancha":"082",
@@ -705,7 +702,7 @@ familiaEmop = {
 
 
 
-itemEmop = {
+itemEmopDic = {
     "0001 - LIMITE DE PLASTICIDADE":"0001",
     "0002 - LIMITE DE LIQUIDEZ":"0002",
     "0003 - LIMITE DE CONTRACAO":"0003",
