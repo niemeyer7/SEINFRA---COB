@@ -13,6 +13,9 @@ sinapi = tuple(sinapi)
 print(sinapi[1])
 
 
-x = modelcatalagos.catalagos(listaDeitensCatalago=emop[1], tipo=2)
+for item in emop:
 
-print(x)
+    x = modelcatalagos.catalagos(listaDeitensCatalago=emop[1], tipo=2)
+
+
+    print(x.idFonte)
