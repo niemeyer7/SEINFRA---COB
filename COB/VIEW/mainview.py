@@ -10,7 +10,7 @@ def main():
 
 class windowClass (wx.Frame):
     def __init__ (self,parent,title):
-        super(windowClass, self).__init__(parent, title=title, size= (1200,700))
+        super(windowClass, self).__init__(parent, title=title, size= (1200,710))
 
         self.basicGUI()
 
@@ -47,21 +47,43 @@ class windowClass (wx.Frame):
         self.SetMenuBar(menubar)
         self.Bind(wx.EVT_MENU, self.Quit,exitItem)
 
-        self.comboOpcoes = ['EMOP','SCO-RIO','SINAPRI']
-
+        self.comboOpcoesFontes = ['EMOP','SCO-RIO','SINAPRI']
+        self.comboOpçõesCategorias = [
+    "01 - SERVIÇOS DE ESCRITÓRIO, LABORATÓRIO E CAMPO",
+    "02 - CANTEIRO DE OBRA",
+    "03 - MOVIMENTO DE TERRA",
+    "04 - TRANSPORTES",
+    "05 - SERVIÇOS COMPLEMENTARES",
+    "06 - GALERIAS, DRENOS E CONEXOS",
+    "07 - ARGAMASSAS, INJEÇÕES E CONSOLIDAÇÕES",
+    "08 - BASES E PAVIMENTOS",
+    "09 - SERVIÇOS DE PARQUES E JARDINS",
+    "10 - FUNDAÇÕES",
+    "11 - ESTRUTURAS",
+    "12 - ALVENARIAS E DIVISÓRIAS",
+    "13 - REVESTIMENTO DE PAREDES, TETOS E PISOS",
+    "14 - ESQUADRIAS DE PVC, FERRO, ALUMÍNIO OU MADEIRA, VIDRAÇAS E FERRAGENS",
+    "15 - INSTALAÇÕES ELÉTRICAS, HIDRÁULICAS, SANITÁRIAS E MECÂNICAS",
+    "16 - COBERTURAS, ISOLAMENTOS E IMPERMEABILIZAÇÕES",
+    "17 - PINTURAS",
+    "18 - APARELHOS HIDRÁULICOS, SANITÁRIOS, ELÉTRICOS, MECÂNICOS E ESPORTIVOS",
+    "19 - ALUGUEL DE EQUIPAMENTOS",
+    "20 - CUSTOS RODOVIÁRIOS",
+    "21 - ILUMINAÇÃO PÚBLICA",
+    "22 - REFLORESTAMENTO E EXPLORAÇÃO FLORESTAL"]
         
         #Botoes
 
-        self.comboFonte = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (25,65), choices = self.comboOpcoes, style=wx.CB_READONLY, size = (150,-1))
-        self.comboCategoria = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (25,106), choices = self.comboOpcoes, style=wx.CB_READONLY, size = (150,-1))
-        self.comboCla = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (25,147), choices = self.comboOpcoes, style=wx.CB_READONLY, size = (150,-1))
-        self.comboFamilia = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (25,187), choices = self.comboOpcoes, style=wx.CB_READONLY, size = (150,-1))
-        self.comboitem = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (25,227), choices = self.comboOpcoes, style=wx.CB_READONLY, size = (150,-1))
-        self.buttonFiltar = wx.Button(panel, wx.ID_ANY, 'Filtar', (25, 277),size=(100,-1))
-        self.button_excluir = wx.Button(panel, wx.ID_ANY, 'Excluir', (25, 620),size=(100,-1))
-        self.buttoninserircodigo = wx.Button(panel, wx.ID_ANY, 'Inserir', (400, 250),size=(100,-1))
-        self.button_inserirtabela = wx.Button(panel, wx.ID_ANY, 'Inserir', (1070, 250),size=(100,-1))
-        self.button_pesquisar = wx.Button(panel, wx.ID_ANY, 'Pesquisar', (600, 250),size=(100,-1))
+        self.comboFonte = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (-1,65), choices = self.comboOpcoesFontes, style=wx.CB_READONLY, size = (260,-1))
+        self.comboCategoria = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (-1,106), choices = self.comboOpçõesCategorias, style=wx.CB_READONLY, size = (260,-1))
+        self.comboCla = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (-1,147), choices = self.comboOpcoesFontes, style=wx.CB_READONLY, size = (260,-1))
+        self.comboFamilia = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (-1,187), choices = self.comboOpcoesFontes, style=wx.CB_READONLY, size = (260,-1))
+        self.comboitem = wx.ComboBox(panel, wx.ID_ANY, value='ID',pos = (-1,227), choices = self.comboOpcoesFontes, style=wx.CB_READONLY, size = (260,-1))
+        self.buttonFiltar = wx.Button(panel, wx.ID_ANY, 'Filtar', (-1, 277),size=(100,-1))
+        self.button_excluir = wx.Button(panel, wx.ID_ANY, 'Excluir', (-1, 620),size=(100,-1))
+        self.buttoninserircodigo = wx.Button(panel, wx.ID_ANY, 'Inserir', (410, 280),size=(100,-1))
+        self.button_inserirtabela = wx.Button(panel, wx.ID_ANY, 'Inserir', (1070, 280),size=(100,-1))
+        self.button_pesquisar = wx.Button(panel, wx.ID_ANY, 'Pesquisar', (600, 280),size=(100,-1))
         self.button_salvar = wx.Button(panel, wx.ID_ANY, 'Salvar', (1070, 620),size=(100,-1))
         self.buttonresetar = wx.Button(panel, wx.ID_ANY, 'Resetar', (600, 620),size=(100,-1))
 
@@ -77,16 +99,26 @@ class windowClass (wx.Frame):
         self.lblCla = wx.StaticText(panel,wx.ID_ANY,'Cla',(25,130), size=(100,-1))
         self.lblFamilia = wx.StaticText(panel,wx.ID_ANY,'Familia',(25,170), size=(100,-1))
         self.lblitem = wx.StaticText(panel,wx.ID_ANY,'item',(25,210), size=(100,-1))
-        self.lblCodigo = wx.StaticText(panel,wx.ID_ANY,'Codigo',(200,250), size=(50,-1))
+        self.lblCodigo = wx.StaticText(panel,wx.ID_ANY,'Codigo',(200,280), size=(50,-1))
         self.lblprojeto = wx.StaticText(panel,wx.ID_ANY,'Projeto',(20,330), size=(50,-1))
         self.lbllocal = wx.StaticText(panel,wx.ID_ANY,'Local',(20,360), size=(50,-1))
         self.lblbdi = wx.StaticText(panel, wx.ID_ANY,"BDI", (750,360), size=(50,-1))
 
+        #sizer
+
+        # sizerteste = wx.BoxSizer(wx.VERTICAL)
+        # sizerteste.Add(self.comboFonte,0,wx.EXPAND)
+        # sizerteste.Add(self.comboCategoria,0,wx.EXPAND)
+        # sizerteste.Add(self.comboCla,0,wx.EXPAND)
+        # sizerteste.Add(self.comboFamilia,,wx.EXPAND)
+        # sizerteste.Add(self.comboitem,-1,wx.EXPAND)
+        # sizerteste.Add(self.lblCodigo,-1)
         
 
+        # self.SetSizer(sizerteste)
         #Caixa txt
 
-        self.caixacodigo = wx.TextCtrl(panel, wx.ID_ANY, wx.EmptyString, (250,250), size=(150,-1))
+        self.caixacodigo = wx.TextCtrl(panel, wx.ID_ANY, wx.EmptyString, (250,280), size=(150,-1))
         self.caixaprojeto = wx.TextCtrl(panel, wx.ID_ANY, wx.EmptyString, (70,330), size=(150,-1))
         self.caixalocal = wx.TextCtrl(panel, wx.ID_ANY, wx.EmptyString, (70,360), size=(150,-1))
         self.bdi = wx.TextCtrl(panel, wx.ID_ANY, wx.EmptyString, (800,360), size=(150,-1))
@@ -96,13 +128,12 @@ class windowClass (wx.Frame):
         self.button_pesquisar.Bind(wx.EVT_BUTTON, self.JanelaPesquisa)
 
         #tabela filtro
-        self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(980,220), pos=(200,10))      
-        self.orcamentopesquisa.InsertColumn(0,"Item",width=50)
-        self.orcamentopesquisa.InsertColumn(1,"Empresa",width=100)
-        self.orcamentopesquisa.InsertColumn(2,"Codigo",width=200)
-        self.orcamentopesquisa.InsertColumn(3,"Descrição",width=420)
-        self.orcamentopesquisa.InsertColumn(4,"Unidade",width=100)
-        self.orcamentopesquisa.InsertColumn(5,"Preço",width=100)
+        self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(920,250), pos=(262,10))      
+        self.orcamentopesquisa.InsertColumn(0,"Empresa",width=100)
+        self.orcamentopesquisa.InsertColumn(1,"Codigo",width=200)
+        self.orcamentopesquisa.InsertColumn(2,"Descrição",width=420)
+        self.orcamentopesquisa.InsertColumn(3,"Unidade",width=100)
+        self.orcamentopesquisa.InsertColumn(4,"Preço",width=100)
         
 
         #date

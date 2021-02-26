@@ -1,5 +1,5 @@
 # import usuarioDAO
-#TESTE
+
 class catalagos:
     def __init__(self, listaDeitensCatalago, tipo=1):
         self.listaDeitensCatalago = listaDeitensCatalago
