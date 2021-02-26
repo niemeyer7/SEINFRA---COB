@@ -20,10 +20,10 @@ class windowClass (wx.Frame):
         panel = wx.Panel(self)
 
 
-        menubar = wx.MenuBar()
+        self.menubar = wx.MenuBar()
 
         
-        filebutton = wx.Menu()
+        self.filebutton = wx.Menu()
 
 
         
@@ -31,22 +31,26 @@ class windowClass (wx.Frame):
 
 
 
-        abaNovoOrcamento = filebutton.Append(wx.ID_ANY, "Novo Orcamento", "Novo Orcamento")
-        abaCarregarOrcamento = filebutton.Append(wx.ID_ANY, "Carregar Orcamento", "Carregar Orcamento")
-        exitItem = filebutton.Append(wx.ID_EXIT, "Sair")
+        self.abaNovoOrcamento = self.filebutton.Append(wx.ID_ANY, "Novo Orcamento", "Novo Orcamento")
+        self.abaCarregarOrcamento = self.filebutton.Append(wx.ID_OPEN, "&Carregar Orcamento")
+        self.exitItem = self.filebutton.Append(wx.ID_EXIT, "Sair")
 
-        sizer = wx.GridBagSizer(5,5)
-        menubar.Append(filebutton,"Arquivo")
+        self.sizer = wx.GridBagSizer(5,5)
+        self.menubar.Append(self.filebutton,"Arquivo")
+
+        
+
+        self.menuinserir= wx.Menu()
+
+        self.menubar.Append(self.menuinserir,"Especial")
+        self.inseriritem = self.menuinserir.Append(wx.ID_ANY, "Inserir Item", "Inserir Item")
+
+        self.SetMenuBar(self.menubar)
+        self.Bind(wx.EVT_MENU, self.Quit,self.exitItem)
 
 
+        self.Bind(wx.EVT_MENU, self.JanelaInserirDados, self.inseriritem)
 
-        menuinserir= wx.Menu()
-
-        menubar.Append(menuinserir,"Especial")
-        inseriritem = menuinserir.Append(wx.ID_ANY, "Inserir Item", "Inserir Item")
-
-        self.SetMenuBar(menubar)
-        self.Bind(wx.EVT_MENU, self.Quit,exitItem)
 
         self.comboOpcoesFontes = ['EMOP','SCO-RIO','SINAPRI']
         self.comboOpçõesCategorias = [
@@ -128,6 +132,9 @@ class windowClass (wx.Frame):
         #bind pesquisa
         self.button_pesquisar.Bind(wx.EVT_BUTTON, self.JanelaPesquisa)
 
+        #bind inserir dados
+        # self.inseriritem.Bind(wx.EVT_BUTTON, )
+
         #tabela filtro
         self.orcamentopesquisa = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(920,250), pos=(262,10))      
         self.orcamentopesquisa.InsertColumn(0,"Empresa",width=100)
@@ -183,12 +190,11 @@ class windowClass (wx.Frame):
         #     self.listaDeitensCatalago.SetStringItem(self.index, 9, Preco)
         #     self.index += 1
 
-        # self.frame.Bind(wx.EVT_MENU, self.ViewInserirdados, self.inseriritem)
 
         #BIND SALVAR
 
         self.button_salvar.Bind(wx.EVT_BUTTON, self.onSave)
-
+        
 
         #tabela orcamento
         self.orcamentotabela = wx.ListCtrl(panel,style=wx.LC_REPORT|wx.SUNKEN_BORDER|wx.LC_HRULES|wx.LC_AUTOARRANGE,size=(1150,220), pos=(25,400))      
@@ -206,6 +212,8 @@ class windowClass (wx.Frame):
     def JanelaPesquisa(self, event):
         pesquisadescr = ViewTelaPesquisa.telapesquisa(None, "")
 
+    def JanelaInserirDados(self, event):
+        Inserirdados = ViewInserirdados.TelaInserirDados(None, "")
 
 
     def Quit(self, e):
