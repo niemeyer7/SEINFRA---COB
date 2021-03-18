@@ -116,6 +116,6 @@ def criarTabelaPreco():
 if __name__ == "__main__":
     criarTabelaEmpresa()
     criarTabela()
-    criarTabelaTrecoEmop
+    criarTabelaPreco
     
     # query_inclusao()
