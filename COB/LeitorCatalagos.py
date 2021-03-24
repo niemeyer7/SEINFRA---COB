@@ -1,25 +1,31 @@
 import pandas as pd 
-import modelcatalagos
+# import modelcatalagos
 
 
-emop =pd.read_csv("dadosgerais.csv", sep=':', error_bad_lines=False)
+emop =pd.read_csv("C:/Users/oscar.ribeiro/Desktop/SEINFRA---COB/COB/dadosgerais.csv", sep=':', error_bad_lines=False)
 emop = emop.to_records(index=False)
 emop = tuple(emop)
 print(emop[1])
 
-sinapi =pd.read_csv("sinapi.csv", sep=':', error_bad_lines=False)
-sinapi = sinapi.to_records(index=False)
-sinapi = tuple(sinapi)
-print(sinapi[1])
+# sinapi =pd.read_csv("C:/Users/oscar.ribeiro/Desktop/SEINFRA---COB/COB/sinapi.csv", sep=':', error_bad_lines=False)
+# sinapi = sinapi.to_records(index=False)
+# sinapi = tuple(sinapi)
+# print(sinapi[1])
 
 
-for item in emop:
+# for item in emop:
 
-    x = modelcatalagos.catalagos(listaDeitensCatalago=emop[1], tipo=2)
+#     x = modelcatalagos.catalagos(listaDeitensCatalago=emop[1], tipo=2)
 
 
-    print(x.idFonte)
+#     print(x.idFonte)
 
-    #CSV Catalagos sem preco
+#CSV Catalagos sem preco
 
-    #CSV Preco itens
+# emopsP = pd.read_csv("C:/Users/oscar.ribeiro/Desktop/SEINFRA---COB/COB/dadosEMOPsPreco.csv", sep=':', error_bad_lines=False)
+
+#CSV Preco itens
+
+
+for i in emop:
+    print(i)
