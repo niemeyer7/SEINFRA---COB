@@ -52,7 +52,6 @@ def criarTabela():
         codigo VARCHAR(255) NOT NULL, 
         descricao TEXT NOT NULL, 
         unidade VARCHAR(255) NOT NULL , 
-        preco decimal(12,2) NOT NULL,
         PRIMARY KEY (IDitem),
         FOREIGN KEY (idFonte)
         REFERENCES empresa (idFonteEmpresa))
@@ -65,7 +64,7 @@ def criarTabela():
 
 
 
-def query_inclusao(idFonteEmpresa,categoria,cla,familia,item,desonerado,codigo,descricao,unidade,preco):
+def query_inclusao(idFonteEmpresa,categoria,cla,familia,item,desonerado,codigo,descricao,unidade):
     connect,cursor = conectar()
     cursor.execute("""
     INSERT INTO catalogo(idFonteEmpresa, categoria, cla,familia, item, desonerado, codigo, descricao, unidade)
