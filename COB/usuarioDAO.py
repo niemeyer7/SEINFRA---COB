@@ -68,7 +68,7 @@ def criarTabela():
 def query_inclusao(idFonteEmpresa,categoria,cla,familia,item,desonerado,codigo,descricao,unidade,preco):
     connect,cursor = conectar()
     cursor.execute("""
-    INSERT INTO catalogo(idFonteEmpresa, categoria, cla,familia, item, desonerado, codigo, descricao, unidade, preco)
+    INSERT INTO catalogo(idFonteEmpresa, categoria, cla,familia, item, desonerado, codigo, descricao, unidade)
     VALUES(   
         {idFonteEmpresa}, 
         {categoria},
@@ -78,8 +78,7 @@ def query_inclusao(idFonteEmpresa,categoria,cla,familia,item,desonerado,codigo,d
         {desonerado}, 
         {codigo},
         {descricao},
-        {unidade},
-        {preco})
+        {unidade})
     """.format(
         idFonteEmpresa=idFonteEmpresa,
         categoria=categoria,
@@ -89,8 +88,7 @@ def query_inclusao(idFonteEmpresa,categoria,cla,familia,item,desonerado,codigo,d
         desonerado=desonerado,
         codigo=codigo,
         decricao=descricao,
-        unidade=unidade,
-        preco=preco
+        unidade=unidade
         ))
     connect.commit()
     cursor.close()
