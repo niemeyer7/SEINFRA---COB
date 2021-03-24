@@ -111,7 +111,7 @@ def criarTabelaPreco():
     connect.close() 
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # criarTabelaEmpresa()
     # criarTabela()
     # criarTabelaPreco
