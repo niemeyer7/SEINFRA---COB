@@ -19,3 +19,7 @@ for item in emop:
 
 
     print(x.idFonte)
+
+    #CSV Catalagos sem preco
+
+    #CSV Preco itens

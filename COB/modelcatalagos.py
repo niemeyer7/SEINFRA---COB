@@ -45,4 +45,5 @@ class catalagos:
     #     desonerado=self.desonerado,
     #     codigo=self.codigo,
     #     descricao=self.descricao,
-    #     unidade=self.unidade,preco=self.preco)
+    #     unidade=self.unidade,
+    #     preco=self.preco)

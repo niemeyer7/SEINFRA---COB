@@ -117,6 +117,4 @@ if __name__ == "__main__":
     # criarTabelaEmpresa()
     # criarTabela()
     # criarTabelaPreco
-
-
     # query_inclusao()
