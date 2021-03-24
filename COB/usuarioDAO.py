@@ -100,13 +100,13 @@ def query_inclusao(idFonteEmpresa,categoria,cla,familia,item,desonerado,codigo,d
 def criarTabelaPreco():
     connect,cursor = conectar()
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS tabelapreco(
-        idcodigo SERIAL PRIMARY KEY,
-        idFonteEmpresa INT,
-        codigo VARCHAR(255) NOT NULL, 
+    CREATE TABLE IF NOT EXISTS preco(
+        idpreco SERIAL PRIMARY KEY,
+        IDitem INT, 
         preco DECIMAL(20,10) NOT NULL,
-        FOREIGN KEY (idFonte)
-        REFERENCES empresa (idFonteEmpresa)
+        Data DATE NOT NULL,
+        FOREIGN KEY (IDitem)
+        REFERENCES empresa (IDitem)
         )""") 
     connect.commit()
     cursor.close()
