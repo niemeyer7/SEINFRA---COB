@@ -114,8 +114,9 @@ def criarTabelaPreco():
 
 
 if __name__ == "__main__":
-    criarTabelaEmpresa()
-    criarTabela()
-    criarTabelaPreco
-    
+    # criarTabelaEmpresa()
+    # criarTabela()
+    # criarTabelaPreco
+
+
     # query_inclusao()

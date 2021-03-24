@@ -21,7 +21,6 @@ class catalagos:
         self.codigo = self.listaDeitensCatalago[7]
         self.descricao = self.listaDeitensCatalago[8]
         self.unidade = self.listaDeitensCatalago[9]
-        self.preco = self.listaDeitensCatalago[10]
 
 
     
@@ -35,7 +34,6 @@ class catalagos:
         self.codigo = self.listaDeitensCatalago[6]
         self.descricao = self.listaDeitensCatalago[7]
         self.unidade = self.listaDeitensCatalago[8]
-        self.preco = self.listaDeitensCatalago[9]
         
 
     # def gravarNoBanco(self):
