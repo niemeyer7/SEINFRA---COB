@@ -12,7 +12,7 @@ import modelcatalagos
 
 #CSV Catalagos sem preco
 
-emopsP = pd.read_csv("C:/Users/oscar.ribeiro/Desktop/SEINFRA---COB/COB/dadosEMOPsPreco.csv", sep=':', error_bad_lines=False)
+emopsP = pd.read_csv("C:/Users/oscar.ribeiro/Desktop/SEINFRA---COB/COB/dadosEMOPsPreco.csv", sep=';', error_bad_lines= False,warn_bad_lines=False)
 emopsP = tuple(emopsP.to_records(index=False))
 
 
@@ -21,3 +21,5 @@ emopsP = tuple(emopsP.to_records(index=False))
 # precoemop = pd.read_csv("C:/Users/oscar.ribeiro/Desktop/SEINFRA---COB/COB/dadosEMOPsPreco.csv", sep=':', error_bad_lines=False)
 
 x = modelcatalagos.catalagos(listaDeitensCatalago=emopsP[1], tipo=2)
+
+
